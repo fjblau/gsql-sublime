@@ -36,8 +36,15 @@ contexts:
     - match: '\b(?i)(order by|interpret|limit)\b'
       scope: keyword.sql
 
-    - match: '\b(?i)(BEGIN|END)\b'
-      scope: constant.numeric.example-c
+ 
+    - match: '\b(?i)(SumAccum|MinAccum|MaxAccum|AvgAccum|AndAccum|OrAccum|BitwiseAndAccum|BitwiseOrAccum|ListAccum|SetAccum|BagAccum|MapAccum|ArrayAccum|HeapAccum|GroupByAccum)\b'
+      scope: entity.name.function
+
+    - match: '\b(?i)(int|string|float|numeric|uint|double|bool|string compress|datetime|fixed_binary)\b'
+      scope: storage.type
+
+    - match: '(\[|\]|\{|\}|\(|\))'
+      scope: entity.name.function
 
     - match: "#"
       scope: punctuation.definition.comment.sql
@@ -52,15 +59,15 @@ contexts:
     # strings in YAML. When using single quoted strings, only single quotes
     # need to be escaped: this is done by using two single quotes next to each
     # other.
-    - match: '\b(?i)(if|else|for|while)\b'
-      scope: keyword.control.example-c
+    - match: '\b(?i)(if|else|for|while|case|then|when|case when|begin|end|end case`)\b'
+      scope: constant.language
 
     - match: '\b(?i)(false|null|true)\b'
-      scope: constant.numeric.example-c
+      scope: constant.numeric
 
     # Numbers
     - match: '\b(-)?[0-9.]+\b'
-      scope: constant.numeric.example-c
+      scope: constant.numeric
 
   double_quoted_string:
     - meta_scope: string.quoted.double.example-c
