@@ -27,7 +27,7 @@ contexts:
     - match: '\b(?i)(separator|set|stats|temp_table|to|total_instance|tuple|typedef|undirected|use)\b'
       scope: keyword.control.all
 
-    - match: '\b(?i)(user_defined_header|using|values|vertex|where|with|USE GRAPH)\b'
+    - match: '\b(?i)(user_defined_header|using|values|vertex|where|with|USE GRAPH|create vertex)\b'
       scope: keyword.control.all
 
     - match: '\b(?i)(DEFINE|CREATE LOADING JOB|FOR GRAPH|DEFINE FILENAME|LOAD|FROM|TO|VERTEX|EDGE|VALUES_USING|USING)\b'
